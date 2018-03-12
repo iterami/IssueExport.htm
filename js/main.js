@@ -7,6 +7,9 @@ function repo_init(){
           'onclick': fetch,
         },
       },
+      'globals': {
+        'result_issues': [],
+      },
       'keybinds': {
         13: {
           'todo': fetch,
