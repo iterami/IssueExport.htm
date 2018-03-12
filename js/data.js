@@ -18,7 +18,8 @@ function fetch(){
                 + '<td><a class=external href=' + result_issues[issue]['html_url'] + ' target=_blank>' + result_issues[issue]['title'] + '</a>'
                 + '<td><a class=external href=https://github.com/' + result_issues[issue]['user']['login'] + ' target=_blank>' + result_issues[issue]['user']['login'] + '</a>'
                 + '<td>' + result_issues[issue]['created_at']
-                + '<td>' + result_issues[issue]['comments'];
+                + '<td>' + result_issues[issue]['comments']
+                + '<td>' + result_issues[issue]['state'];
           }
           document.getElementById('results-table').innerHTML = table_html;
       },
