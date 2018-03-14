@@ -9,6 +9,8 @@ function fetch(){
 
     core_ajax({
       'todo': function(result){
+          document.getElementById('results-json').value = result;
+
           result_issues = JSON.parse(result);
 
           var table_html = '';
