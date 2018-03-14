@@ -5,7 +5,7 @@ function fetch(){
       + document.getElementById('owner').value
       + '/'
       + document.getElementById('repo').value
-      + '/issues';
+      + '/issues?state=all';
 
     core_ajax({
       'todo': function(result){
@@ -15,7 +15,9 @@ function fetch(){
           for(var issue in result_issues){
               table_html += '<tr>'
                 + '<td>' + result_issues[issue]['number']
-                + '<td><a class=external href=' + result_issues[issue]['html_url'] + ' target=_blank>' + result_issues[issue]['title'] + '</a>'
+                + '<td><a class=external href=' + result_issues[issue]['html_url'] + ' target=_blank>' + core_html_format({
+                  'string': result_issues[issue]['title'],
+                }) + '</a>'
                 + '<td><a class=external href=https://github.com/' + result_issues[issue]['user']['login'] + ' target=_blank>' + result_issues[issue]['user']['login'] + '</a>'
                 + '<td>' + result_issues[issue]['created_at']
                 + '<td>' + result_issues[issue]['comments']
