@@ -10,6 +10,15 @@ function fetch(){
       + '&sort=' + document.getElementById('sort').value
       + '&state=' + document.getElementById('state').value;
 
+    var labels = document.getElementById('labels').value;
+    if(labels.length > 0){
+        url += '&labels=' + labels;
+    }
+    var since = document.getElementById('since').value;
+    if(since.length > 0){
+        url += '&since=' + since;
+    }
+
     core_ajax({
       'todo': function(result){
           document.getElementById('results-json').value = result;
