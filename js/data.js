@@ -5,7 +5,7 @@ function fetch(){
       + document.getElementById('owner').value
       + '/'
       + document.getElementById('repo').value
-      + '/issues?state=all';
+      + '/issues?state=' + document.getElementById('state').value;
 
     core_ajax({
       'todo': function(result){

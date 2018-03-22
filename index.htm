@@ -5,7 +5,21 @@
 <link href=../common/css/core.css rel=stylesheet>
 <link href=../common/css/dom.css rel=stylesheet>
 
-https://api.github.com/repos/<input id=owner>/<input id=repo>/issues?state=all<br>
+<table>
+  <tr>
+    <td>Repository Name
+    <td><input id=repo>
+  <tr>
+    <td>Repository Owner
+    <td><input id=owner>
+  <tr>
+    <td>State
+    <td><select id=state>
+        <option value=all>All</a>
+        <option value=closed>Closed</a>
+        <option value=open>Open</a>
+      </select>
+</table>
 <input id=fetch type=button value="Fetch [ENTER]">
 <hr>
 <table>
