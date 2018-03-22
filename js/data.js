@@ -5,7 +5,10 @@ function fetch(){
       + document.getElementById('owner').value
       + '/'
       + document.getElementById('repo').value
-      + '/issues?state=' + document.getElementById('state').value;
+      + '/issues'
+      + '?direction=' + document.getElementById('direction').value
+      + '&sort=' + document.getElementById('sort').value
+      + '&state=' + document.getElementById('state').value;
 
     core_ajax({
       'todo': function(result){
