@@ -5,8 +5,8 @@ function fetch(){
       + document.getElementById('owner').value
       + '/'
       + document.getElementById('repo').value
-      + '/issues'
-      + '?direction=' + document.getElementById('direction').value
+      + '/issues?per_page=100'
+      + '&direction=' + document.getElementById('direction').value
       + '&sort=' + document.getElementById('sort').value
       + '&state=' + document.getElementById('state').value;
 
