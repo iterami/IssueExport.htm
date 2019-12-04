@@ -4,7 +4,7 @@ function repo_init(){
     core_repo_init({
       'events': {
         'fetch': {
-          'onclick': fetch,
+          'onclick': fetchResult,
         },
       },
       'globals': {
@@ -12,7 +12,7 @@ function repo_init(){
       },
       'keybinds': {
         13: {
-          'todo': fetch,
+          'todo': fetchResult,
         },
       },
       'title': 'IssueExport.htm',

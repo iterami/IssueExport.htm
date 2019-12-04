@@ -1,6 +1,6 @@
 'use strict';
 
-function fetch(){
+function fetchResult(){
     let url = 'https://api.github.com/repos/'
       + document.getElementById('owner').value
       + '/'
