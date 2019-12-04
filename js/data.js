@@ -21,21 +21,19 @@ function fetchResult(){
 
     core_ajax({
       'todo': function(result){
-          document.getElementById('results-json').value = result;
-
-          result_issues = JSON.parse(result);
+          document.getElementById('results-json').value = JSON.stringify(result);
 
           let table_html = '';
-          for(let issue in result_issues){
+          for(let issue in result){
               table_html += '<tr>'
-                + '<td>' + result_issues[issue]['number']
-                + '<td><a class=external href=' + result_issues[issue]['html_url'] + ' rel=noopener target=_blank>' + core_html_format({
-                  'string': result_issues[issue]['title'],
+                + '<td>' + result[issue]['number']
+                + '<td><a class=external href=' + result[issue]['html_url'] + ' rel=noopener target=_blank>' + core_html_format({
+                  'string': result[issue]['title'],
                 }) + '</a>'
-                + '<td><a class=external href=https://github.com/' + result_issues[issue]['user']['login'] + ' rel=noopener target=_blank>' + result_issues[issue]['user']['login'] + '</a>'
-                + '<td>' + result_issues[issue]['created_at']
-                + '<td>' + result_issues[issue]['comments']
-                + '<td>' + result_issues[issue]['state'];
+                + '<td><a class=external href=https://github.com/' + result[issue]['user']['login'] + ' rel=noopener target=_blank>' + result[issue]['user']['login'] + '</a>'
+                + '<td>' + result[issue]['created_at']
+                + '<td>' + result[issue]['comments']
+                + '<td>' + result[issue]['state'];
           }
           document.getElementById('results-table').innerHTML = table_html;
       },
