@@ -10,11 +10,11 @@ function fetchResult(){
       + '&sort=' + document.getElementById('sort').value
       + '&state=' + document.getElementById('state').value;
 
-    let labels = document.getElementById('labels').value;
+    const labels = document.getElementById('labels').value;
     if(labels.length > 0){
         url += '&labels=' + labels;
     }
-    let since = document.getElementById('since').value;
+    const since = document.getElementById('since').value;
     if(since.length > 0){
         url += '&since=' + since;
     }
@@ -24,7 +24,7 @@ function fetchResult(){
           document.getElementById('results-json').value = JSON.stringify(result);
 
           let table_html = '';
-          for(let issue in result){
+          for(const issue in result){
               table_html += '<tr>'
                 + '<td>' + result[issue]['number']
                 + '<td><a class=external href=' + result[issue]['html_url'] + ' rel=noopener target=_blank>' + core_html_format({
